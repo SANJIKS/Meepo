@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Home,
   Bot,
@@ -39,6 +39,12 @@ const Sidebar = ({
   collapsed = false,
   onToggleCollapse = () => {},
 }: SidebarProps) => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate("/");
+  };
+
   const menuItems = [
     { id: "dashboard", label: "Главная", icon: <Home size={20} />, path: "/dashboard" },
     {
@@ -151,7 +157,11 @@ const Sidebar = ({
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button variant="ghost" size="icon">
+                  <Button 
+                    variant="ghost" 
+                    size="icon"
+                    onClick={handleLogout}
+                  >
                     <LogOut size={18} />
                   </Button>
                 </TooltipTrigger>
@@ -185,7 +195,11 @@ const Sidebar = ({
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button variant="ghost" size="icon">
+                  <Button 
+                    variant="ghost" 
+                    size="icon"
+                    onClick={handleLogout}
+                  >
                     <LogOut size={18} />
                   </Button>
                 </TooltipTrigger>
