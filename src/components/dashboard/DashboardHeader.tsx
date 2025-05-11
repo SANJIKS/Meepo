@@ -22,7 +22,7 @@ interface DashboardHeaderProps {
 }
 
 const DashboardHeader = ({
-  title = "Панель управления",
+  title = "Личный кабинет",
   userName = "Иван Петров",
   userAvatar = "",
   notificationCount = 3,

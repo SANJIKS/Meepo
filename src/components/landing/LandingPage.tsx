@@ -15,7 +15,7 @@ const LandingPage = () => {
         <Button
           asChild
           variant="outline"
-          className="text-white border-slate-600 hover:bg-slate-700"
+          className="bg-slate-800 hover:bg-slate-900 text-white px-8"
         >
           <Link to="/login">Войти</Link>
         </Button>
@@ -36,7 +36,7 @@ const LandingPage = () => {
           <Button
             asChild
             size="lg"
-            className="bg-blue-500 hover:bg-blue-600 text-white px-8"
+            className="bg-slate-800 hover:bg-slate-900 text-white px-8"
           >
             <Link to="/dashboard">
               Войти в личный кабинет <ArrowRight className="ml-2 h-5 w-5" />
@@ -44,14 +44,14 @@ const LandingPage = () => {
           </Button>
           <Button
             asChild
-            variant="outline"
             size="lg"
-            className="text-white border-slate-600 hover:bg-slate-700"
+            className="bg-slate-700 text-white hover:bg-slate-800 border border-slate-600"
           >
             <Link to="/register">Зарегистрироваться</Link>
           </Button>
         </div>
       </main>
+
 
       {/* Features Section */}
       <section className="container mx-auto px-4 py-16">

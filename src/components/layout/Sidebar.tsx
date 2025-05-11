@@ -31,7 +31,7 @@ interface SidebarProps {
 }
 
 const Sidebar = ({
-  userName = "Александр Иванов",
+  userName = "Иван Петров",
   userEmail = "alex@example.com",
   userAvatar = "",
   activeSection = "dashboard",
