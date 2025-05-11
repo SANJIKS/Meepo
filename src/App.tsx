@@ -27,7 +27,7 @@ function App() {
           <Route path="/dashboard" element={<Home />} />
           <Route path="/referrals" element={<ReferralLinks />} />
           <Route path="/campaigns" element={<CampaignsList />} />
-          <Route path="/campaigns/create" element={<CampaignCreate />} />
+          <Route path="/campaigns-create" element={<CampaignCreate />} />
           <Route path="/bots" element={<Home />} />
           <Route path="/chats" element={<Home />} />
           <Route path="/balance" element={<Home />} />

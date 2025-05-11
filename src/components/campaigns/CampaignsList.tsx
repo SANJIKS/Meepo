@@ -106,7 +106,7 @@ export default function CampaignsList() {
       <div className="container mx-auto py-6 bg-background">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold">Управление рассылками</h1>
-          <Button onClick={() => (window.location.href = "/campaigns/create")}>
+          <Button onClick={() => (window.location.href = "/campaigns-create")}>
             <Plus className="mr-2 h-4 w-4" /> Создать рассылку
           </Button>
         </div>
