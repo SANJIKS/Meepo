@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense } from "react";
 import { useRoutes, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./components/home";
 import routes from "tempo-routes";
@@ -9,18 +9,13 @@ import CampaignsList from "./components/campaigns/CampaignsList";
 import AdminPage from "./components/admin/AdminPage";
 import RegisterPage from "./components/auth/RegisterPage";
 import { Chat } from "./components/chat/Chat";
-
-const CampaignCreate = lazy(
-  () => import("./components/campaigns/CampaignCreate"),
-);
+import CampaignCreate from "./components/campaigns/CampaignCreate";
 
 function App() {
   return (
     <Suspense fallback={<p>Loading...</p>}>
       <>
-        {/* Tempo routes for storyboards */}
         {import.meta.env.VITE_TEMPO === "true" && useRoutes(routes)}
-
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
@@ -33,13 +28,9 @@ function App() {
           <Route path="/chats" element={<Chat />} />
           <Route path="/balance" element={<Home />} />
           <Route path="/admin" element={<AdminPage />} />
-
-          {/* Add this before the catchall route for Tempo */}
           {import.meta.env.VITE_TEMPO === "true" && (
             <Route path="/tempobook/*" />
           )}
-
-          {/* Redirect any other routes to landing page */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </>
