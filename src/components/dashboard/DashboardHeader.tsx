@@ -13,6 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "../ui/dropdown-menu";
 import { cn } from "../../lib/utils";
+import { useNavigate } from "react-router-dom";
 
 interface DashboardHeaderProps {
   title?: string;
@@ -27,6 +28,12 @@ const DashboardHeader = ({
   userAvatar = "",
   notificationCount = 3,
 }: DashboardHeaderProps) => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    navigate("/");
+  };
+
   return (
     <header className="bg-white border-b border-gray-200 p-4 flex items-center justify-between w-full h-20">
       <h1 className="text-2xl font-semibold text-gray-800">{title}</h1>
@@ -121,7 +128,12 @@ const DashboardHeader = ({
             <DropdownMenuItem>Настройки</DropdownMenuItem>
             <DropdownMenuItem>Подписка</DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="text-red-600">Выйти</DropdownMenuItem>
+            <DropdownMenuItem
+              onClick={handleLogout}
+              className="text-red-600 cursor-pointer"
+            >
+              Выйти
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
