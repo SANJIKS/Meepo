@@ -7,6 +7,7 @@ import LoginPage from "./components/auth/LoginPage";
 import ReferralLinks from "./components/referrals/ReferralLinks";
 import CampaignsList from "./components/campaigns/CampaignsList";
 import AdminPage from "./components/admin/AdminPage";
+import RegisterPage from "./components/auth/RegisterPage";
 
 const CampaignCreate = lazy(
   () => import("./components/campaigns/CampaignCreate"),
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
           <Route path="/dashboard" element={<Home />} />
           <Route path="/referrals" element={<ReferralLinks />} />
           <Route path="/campaigns" element={<CampaignsList />} />

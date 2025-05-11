@@ -10,6 +10,7 @@ import {
   Settings,
   LogOut,
   ChevronRight,
+  ChevronLeft,
 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
@@ -32,15 +33,14 @@ interface SidebarProps {
 
 const Sidebar = ({
   userName = "Иван Петров",
-  userEmail = "alex@example.com",
+  userEmail = "ivan@example.com",
   userAvatar = "",
   activeSection = "dashboard",
   collapsed = false,
   onToggleCollapse = () => {},
 }: SidebarProps) => {
   const menuItems = [
-    { id: "dashboard", label: "Главная", icon: <Home size={20} />, path: "/" },
-    { id: "bots", label: "Мои боты", icon: <Bot size={20} />, path: "/bots" },
+    { id: "dashboard", label: "Главная", icon: <Home size={20} />, path: "/dashboard" },
     {
       id: "links",
       label: "Ссылки",
@@ -60,12 +60,6 @@ const Sidebar = ({
       path: "/chats",
     },
     {
-      id: "balance",
-      label: "Баланс",
-      icon: <Wallet size={20} />,
-      path: "/balance",
-    },
-    {
       id: "admin",
       label: "Администратор",
       icon: <Settings size={20} />,
@@ -75,7 +69,9 @@ const Sidebar = ({
 
   return (
     <div
-      className={`h-full bg-background border-r flex flex-col transition-all duration-300 ${collapsed ? "w-20" : "w-[280px]"}`}
+      className={`h-full bg-background border-r flex flex-col transition-all duration-300 ${
+        collapsed ? "w-20" : "w-[280px]"
+      }`}
     >
       <div className="p-4 flex items-center justify-between">
         <div
@@ -88,13 +84,8 @@ const Sidebar = ({
             <span className="text-xl font-bold text-primary">М</span>
           )}
         </div>
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={onToggleCollapse}
-          className={collapsed ? "hidden" : ""}
-        >
-          <ChevronRight size={18} />
+        <Button variant="ghost" size="icon" onClick={onToggleCollapse}>
+          {collapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
         </Button>
       </div>
 

@@ -9,6 +9,7 @@ import {
 import { Badge } from "../ui/badge";
 import { CalendarIcon, Clock, Users } from "lucide-react";
 import { Button } from "../ui/button";
+import { useNavigate } from "react-router";
 
 interface Campaign {
   id: string;
@@ -55,6 +56,8 @@ export default function UpcomingCampaigns({
     },
   ],
 }: UpcomingCampaignsProps) {
+  const navigate = useNavigate();
+
   return (
     <Card className="w-full h-full bg-white shadow-sm">
       <CardHeader className="pb-2">
@@ -62,7 +65,7 @@ export default function UpcomingCampaigns({
           <CardTitle className="text-lg font-medium">
             Предстоящие рассылки
           </CardTitle>
-          <Button variant="outline" size="sm" className="text-sm">
+          <Button onClick={() => navigate("/campaigns")} variant="outline" size="sm" className="text-sm">
             Все рассылки
           </Button>
         </div>

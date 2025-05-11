@@ -38,7 +38,7 @@ const LandingPage = () => {
             size="lg"
             className="bg-slate-800 hover:bg-slate-900 text-white px-8"
           >
-            <Link to="/dashboard">
+            <Link to="/login">
               Войти в личный кабинет <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
