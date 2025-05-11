@@ -8,6 +8,7 @@ import ReferralLinks from "./components/referrals/ReferralLinks";
 import CampaignsList from "./components/campaigns/CampaignsList";
 import AdminPage from "./components/admin/AdminPage";
 import RegisterPage from "./components/auth/RegisterPage";
+import { Chat } from "./components/chat/Chat";
 
 const CampaignCreate = lazy(
   () => import("./components/campaigns/CampaignCreate"),
@@ -29,7 +30,7 @@ function App() {
           <Route path="/campaigns" element={<CampaignsList />} />
           <Route path="/campaigns/create" element={<CampaignCreate />} />
           <Route path="/bots" element={<Home />} />
-          <Route path="/chats" element={<Home />} />
+          <Route path="/chats" element={<Chat />} />
           <Route path="/balance" element={<Home />} />
           <Route path="/admin" element={<AdminPage />} />
 
